@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Store</title>
+
+    <style>
+        .story {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="story">
+        <form>
+            <label for="name">Nome</label>
+            <input type="text" id="name" />
+            
+            <label for="mail">Email</label>
+            <input type="email" id="mail" />
+            <button onclick="localstory()">Salvar</button>
+            <button onclick="deletlocal()">Limpar</button>
+        </form>
+    </div>
+    <script>
+        function localstory (){
+            var nome = document.getElementById("name").value;
+            var email = document.getElementById("mail").value;
+            localStorage.setItem("local-nome", JSON.stringify(nome));
+            localStorage.setItem("local-email", JSON.stringify(email));
+
+            return alert (" Seus dados foram salvos");     
+        }
+        function deletlocal () {
+            localStorage.removeItem("local-nome");
+            localStorage.removeItem("local-email");
+
+            return alert (" seus dados foram apagados");
+        }
+        </script>
+    <!-- <script src="entrega2.js"></script> -->
+</body>
+
+</html>
