@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="question">One Question</h3>
+    <p class="answer" style="display: none;"> One Answer </p>
+
+    <h3 class="question">Two Question</h3>
+    <p class="answer" style="display: none;"> Two Answer </p>
+
+    <h3 class="question">Three Question</h3>
+    <p class="answer" style="display: none;"> Three Answer </p>
+
+    <h3 class="question">Four Question</h3>
+    <p class="answer" style="display: none;"> Four Answer </p>
+ 
+
+    <script>
+        const varQuest = document.getElementsByClassName("question");
+        const varAnsw = document.getElementsByClassName("answer");
+     
+        for (let i = 0; i < varQuest.length; i++) {
+            varQuest[i].addEventListener("mousedown", function() {
+                varAnsw[i].style.display = varAnsw[i].style.display === "none" ? "block" : "none";
+            });
+        }
+    
+    </script>
+
+</body>
+</html>

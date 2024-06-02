@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "tela">
+
+    </div>
+    <button id="addItemButton">Adicionar Item</button>
+<ul id="minhaLista">
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+    <script>
+        const addItemButton = document.getElementById('addItemButton');
+const minhaLista = document.getElementById('minhaLista');
+
+// Adiciona um event listener para o evento de clique
+addItemButton.addEventListener('click', function() {
+    const novoItem = document.createElement('li');
+    novoItem.textContent = 'Novo Item';
+    minhaLista.appendChild(novoItem);
+});
+        function Pessoa (nome, cpf, idade) {
+            this.nome = nome;
+            this.cpf = cpf;
+            this.idade = idade;
+        }
+        
+        let pessoa1 = new Pessoa ("maria", 12838238238, 36)
+        let pessoa2 = new Pessoa ( "joao", 12343234578, 34)
+     
+        console.log(pessoa1)
+
+        var div = document.getElementById("tela");
+        var titulo = document.createElement("h1");
+        titulo.textContent = "meu titulo"
+        div.appendChild(titulo);
+        
+        var paragrafo = documente.createElement("p");
+        paragrago.textContent = " estudos DOM"
+        div.appendChild(paragrafo);
+        
+    </script>
+</body>
+</html>

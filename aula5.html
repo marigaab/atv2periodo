@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="nani" style="background-color: purple; width: 100%; height: 100%;" >
+        <h1>oi</h1>
+        <p id="network-status"> voce esta online</p>
+    </div>
+    <button id="butao">Me clique</button>
+
+    <script>
+        const varDiv = document.getElementById("nani"); 
+        const status = document.getElementById("network-status");
+        const botao = document.getElementById ("butao");
+
+        varDiv.addEventListener("mousedown", function(){
+            console.log("teste");
+            varDiv.style.background = "pink"
+        })
+        // varDiv.addEventListener("mouseenter", function(){
+        //     varDiv.style.backgroundColor = "yellow";
+        // })
+        // varDiv.addEventListener("mouseleave", function(){
+        //     varDiv.style.backgroundColor = "red";
+        // })
+        window.addEventListener("online", function(){
+            status.textContent = "você está online";
+            status.style.color = "green";
+        })
+        window.addEventListener("offline", function(){
+            status.textContent = "você está offline";
+            status.style.color = "red";
+        });
+        
+
+        
+        </script>
+</body>
+</html>
