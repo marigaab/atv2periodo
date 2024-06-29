@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        class Pessoa {
+            #nome;
+            #idade;
+            #email;
+            constructor(nome, idade, email) {
+                this.#nome = nome;
+                this.#idade = idade;
+                this.#email = email;
+            }
+            getEmail() {
+                return this.#email;
+            }
+            setEmail(novoEmail) {
+                const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(novoEmail);
+                if (emailValido) {
+                    this.#email = novoEmail;
+                } else {
+                    throw new Error("Email inválido");
+                }
+            }
+            getIdade() {
+                return this.#idade;
+            }
+            setIdade(novaIdade) {
+                if (novaIdade > 0) {
+                    this.#idade = novaIdade;
+                } else {
+                    throw new Error("idade invalida");
+                }
+            }
+            getNome() {
+                return this.#nome;
+            }
+            setNome(novoNome) {
+                const nomeNumeros = /\d/.test(novoNome);
+                if (!nomeNumeros) {
+                    this.#nome = novoNome;
+                } else {
+                    throw new Error("Nome não pode conter números");
+                }
+            }
+        }
+
+        let pessoa1 = new Pessoa ("Gab", 26, "gab@gmail.com");
+        // console.log (pessoa1.getNome());
+        // console.log (pessoa1.getIdade ());
+        // console.log (pessoa1.getEmail ());
+
+        try {
+            pessoa1.setNome("Gab");
+            pessoa1.setIdade(26);
+            pessoa1.setEmail("gab@gmail.com");
+            console.log(pessoa1.getNome());  
+            console.log(pessoa1.getIdade()); 
+            console.log(pessoa1.getEmail()); 
+        } catch (e) {
+            console.error(e.message);
+        }
+
+    </script>
+</body>
+
+</html>

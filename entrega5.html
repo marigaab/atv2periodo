@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Carro {
+            constructor(marca, modelo, ano, cor, ligado = false) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.ano = ano;
+                this.cor = cor;
+                this.ligado = ligado;
+            }
+
+            info() {
+                console.log(`${this.marca} ${this.modelo} ${this.ano} ${this.cor}. O carro está ${this.ligado ? "ligado" : "desligado"}.`);
+            }
+
+            ligar() {
+                if (!this.ligado) {
+                    this.ligado = true;
+                    console.log("O carro está ligado");
+                }
+            }
+
+            desligar() {
+                if (this.ligado) {
+                    this.ligado = false;
+                    console.log("O carro foi desligado");
+                }
+            }
+
+            pintar(novaCor) {
+                if (this.cor !== novaCor) {
+                    console.log(`O carro foi pintado de ${this.cor} para ${novaCor}.`);
+                    this.cor = novaCor;
+                }
+            }
+        }
+        let meuCarro = new Carro('Volkswagen', 'SpaceCross', 2013, 'preto');
+        meuCarro.info();
+        meuCarro.ligar();
+        meuCarro.info();
+        meuCarro.pintar('vermelho');
+        meuCarro.info();
+    </script>
+</body>
+
+</html>

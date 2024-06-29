@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-bre">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log ('inicio da chamada assincrona');
+        function chamadaAssincrona () {
+            fetch ('https:jsonplaceholder.typicode.com/post/1')
+            .then (response => {
+                if (!response.ok ) {
+                    throw new Error (`Erro: ${response.statusText}`);
+                }
+                return response.json ();
+            })
+        .then (data => {
+            console.log ('resposta:', data);
+        })
+        .catch ( error => {
+            console.error ('error:', error);
+        });
+        }
+        chamadaAssincrona ();
+        console.log ('Fim da chamada assincroma');
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Professor {
+            #nome;
+            #materia;
+            #turno;
+            constructor(nome, materia, turno) {
+                this.#nome = nome;
+                this.#materia = materia;
+                this.#turno = turno;
+            }
+            get nome() {
+                return this.#nome;
+            }
+            get materia() {
+                return this.#materia;
+            }
+            get turno() {
+                return this.#turno;
+            }
+        }
+
+        class Aluno {
+            #nome;
+            #ano;
+            #turno;
+            constructor(nome, ano, turno) {
+                this.#nome = nome;
+                this.#ano = ano;
+                this.#turno = turno;
+            }
+            get nome() {
+                return this.#nome;
+            }
+            get ano() {
+                return this.#ano;
+            }
+            get turno() {
+                return this.#turno;
+            }
+        }
+
+        class Escola {
+            #nome;
+            #professores;
+            #alunos;
+            constructor(nome) {
+                this.#nome = nome;
+                this.#professores = [];
+                this.#alunos = [];
+            }
+            get nome() {
+                return this.#nome;
+            }
+            addProfessor(professor) {
+                this.#professores.push(professor);
+            }
+            addAluno(aluno) {
+                this.#alunos.push(aluno);
+            }
+            listaProfessores() {
+                return this.#professores;
+            }
+            listaAlunos() {
+                return this.#alunos;
+            }
+        }
+
+        let professor1 = new Professor("Jhony", "Ed Fisica", "Tarde");
+        let professor2 = new Professor("Dalva", "Matematica", "Manha");
+
+        let aluno1 = new Aluno("Matheus", 7, "Tarde");
+        let aluno2 = new Aluno("Gabrielle", 2, "Manha");
+
+        let escola = new Escola("Almirante Tamandaré");
+        console.log(escola);
+
+        escola.addProfessor(professor1);
+        escola.addProfessor(professor2);
+
+        escola.addAluno(aluno1);
+        escola.addAluno(aluno2);
+
+        console.log("Professores da escola:");
+        escola.listaProfessores().forEach(prof => {
+            console.log(`${prof.nome}, ${prof.materia}, (${prof.turno})`);
+        });
+
+        console.log("Alunos da Escola:");
+        escola.listaAlunos().forEach(aluno => {
+            console.log(`${aluno.nome} - ${aluno.ano} Ano - (${aluno.turno})`);
+        });
+
+    </script>
+</body>
+</html>

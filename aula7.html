@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>orientação a objeto</h1>
+    <script>
+      class Pessoa {
+        constructor(nome, idade) {
+            this.nome = nome;
+            this.idade = idade;
+            console.log("constructor executado");
+        }
+        
+        digaOla() {
+            console.log("ola");
+        }
+        seApresente () {
+           console.log (`meu nome é: ${this.nome} e tenho: ${this.idade}`)
+         }
+    }
+    
+     pessoa1 = new Pessoa("gab", 26);
+     pessoa2 = new Pessoa(); 
+
+    console.log(pessoa1);
+    pessoa2.digaOla();
+    </script>
+</body>
+</html>

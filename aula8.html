@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Baseado nos conceitos de orientação a objetos e herança, contextualize um problema (descreva) que minimamente deva ter uma superclasse e três subclasses. -->
+
+
+</head>
+
+<body>
+    <script>
+        class Provedor {
+            #produto
+            // #serie
+            // #jogos
+            constructor(produto) {
+                this.#produto = produto;
+            }
+        }
+        class Filme extends Provedor {
+            constructor(produto) {
+                super(produto)
+            }
+        }
+        class Serie extends Provedor {
+            constructor (produto) {
+                super (produto)
+            }
+        }
+        class Jogos extends Provedor {
+            constructor (produto) {
+                super (produto)
+            }
+        }
+         filme1 = new Filme("Divertidamente");
+         serie2 = new Serie ("Arcane");
+         jogos3 = new Jogos ("Sonic");
+         console.log (filme1)
+         console.log (serie2)
+         console.log (jogos3)
+    </script>
+</body>
+
+</html>
